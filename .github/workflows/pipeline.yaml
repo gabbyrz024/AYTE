@@ -26,7 +26,11 @@ jobs:
     - name: Set up SAM CLI
       uses: aws-actions/setup-sam@v2
       with:
-        version: 1.129.0
+        version: 1.132.0
+
+    - name: SAM Validate
+      run: sam validate --lint
+
 
     - name: SAM Build
       run: sam build

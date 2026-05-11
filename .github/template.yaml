@@ -67,7 +67,7 @@ Resources:
                 AWS:SourceArn: !Sub "arn:aws:cloudfront::${AWS::AccountId}:distribution/${FrontendDistribution}"
 
 
-  Outputs:
+Outputs:
   FrontendURL:
     Description: "URL pública del frontend"
     Value: !Sub "https://${FrontendDistribution.DomainName}"
