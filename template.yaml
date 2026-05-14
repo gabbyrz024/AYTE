@@ -70,7 +70,7 @@ Resources:
   UploadFunction:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: "UploadFileFunction-${AWS::StackName}"
+      FunctionName: !Sub "UploadFileFunction-${AWS::StackName}"
       Handler: app.lambda_handler
       Runtime: python3.10
       CodeUri: BACKEND/
