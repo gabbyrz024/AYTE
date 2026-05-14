@@ -11,6 +11,7 @@ jobs:
     env:
       AWS_REGION: us-east-2
       STACK_NAME: gcruiz-devops
+      BUCKET_NAME: frontend-static-gcruiz-devops-us-east-2 
 
     steps:
     - name: Checkout repo
@@ -43,3 +44,7 @@ jobs:
           --capabilities CAPABILITY_IAM \
           --no-confirm-changeset \
           --no-fail-on-empty-changeset
+
+    - name: Upload frontend to S3
+      run: |
+        aws s3 sync FRONTEND/ s3://$BUCKET_NAME --delete      
